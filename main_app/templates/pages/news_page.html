@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container text-bot">
+  <div class="row row-cols-4">
+    <div class="col">
+        <nav class="nav flex-column">
+            <a class="nav-link" href="/">Главная</a>
+            <a class="nav-link" href="/profile/">Моя страница</a>
+            <a class="nav-link" href="/dmusic/">Разложение музыки</a>
+        </nav>
+    </div>
+    <div class="col">
+        {% for elem in news %}
+                <div class="card" style="width: 40rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{elem.title}}</h5>
+                        <p class="card-text">{{elem.text}}</p>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
